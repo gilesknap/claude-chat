@@ -1,0 +1,655 @@
+<!doctype html><html><head><!-- frame-runtime --><base href="/_f/1787909064-7c0c/"><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.DvsaCnS7.js","assets":"assets.8Gk803W0.js","comments":"comments.GLuHR3zP.js","db":"db.h-3sndFg.js","downloads":"downloads.C3GSvEDP.js","embed":"embed.CxGAyc-v.js","mcp":"mcp.Bvma3qD7.js","network":"network.B5UA9Su4.js","permissions":"permissions.BNySkLV5.js","room":"room.BMMoe2BY.js","sample":"sample.BW2Uysoh.js","self":"artifact.DvsaCnS7.js","user":"user.BpKav-Rf.js"},"transforms":"_transforms.CQm3TZ9K.js","comments":"_comments.DELvYLUh.js","translate":"_translate.5HCW4BJh.js"}</script><script>(function(){"use strict";var J=["light","dark","system"],Q=/^[A-Za-z0-9_-]{1,64}$/,H=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,ee=new Set(["class","hidden","value","checked"]);function te(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||ee.has(t)}var Me="http://www.w3.org/1999/xhtml",re="http://www.w3.org/2000/svg",ne=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),oe=new Set(["script","style"]);function se(e){const t=e.localName.toLowerCase();return e.namespaceURI==="http://www.w3.org/1999/xhtml"?!ne.has(t):e.namespaceURI===re?!oe.has(t):!1}var ae=new Set(["html","head","body","frameset"]);function ie(e){return e.namespaceURI==="http://www.w3.org/1999/xhtml"&&ae.has(e.localName)}function ce(e){if(e===null||typeof e!="object")return!1;const t=e;if(typeof t.target!="string"||!Q.test(t.target)||t.text!==void 0&&typeof t.text!="string")return!1;if(t.attrsSet!==void 0){if(t.attrsSet===null||typeof t.attrsSet!="object")return!1;for(const[r,n]of Object.entries(t.attrsSet))if(!H.test(r)||typeof n!="string")return!1}if(t.attrsRemoved!==void 0){if(!Array.isArray(t.attrsRemoved))return!1;for(const r of t.attrsRemoved)if(typeof r!="string"||!H.test(r))return!1}return!0}function le(e,t){if(e===null||typeof e!="object")return!1;const{seq:r,elements:n}=e;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let s=0;s<n.length;s++)if(!t(n[s]))return!1;return!0}function ue(e){return e===null||typeof e!="object"?!1:le(e.__frame_patch,ce)}function fe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function pe(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function de(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const r=t.theme;return typeof r=="string"&&J.includes(r)}var A=/^[\w.-]+\.js$/;function me(e,t,r){return r?"inert":typeof t=="string"&&A.test(t)?e?[t]:"inert":e?"inert":"framed"}function he(){return{post(e,t){parent.postMessage(e,t)},on(e){const t=r=>{r.source===parent&&e(r.data,r.origin)};return addEventListener("message",t),()=>removeEventListener("message",t)}}}function _e(){return{post:()=>{},on:()=>()=>{}}}var O="__frame_scroll",ve=150,ye=310,we=160,be=3e4;function Ee(){let e=0,t=!1,r=!1,n=!1,s=0,a=null;const l=i=>{try{sessionStorage.setItem(O,JSON.stringify({y:i}))}catch{}},d=()=>{if(clearTimeout(e),a===null)return;const i=a;a=null,l(i)},v=()=>{if(t){t=!1;return}r=!0,a=scrollY,clearTimeout(e),e=setTimeout(d,ve)};try{addEventListener("scroll",v,{passive:!0}),addEventListener("pagehide",d)}catch{}const y=()=>{let i;try{i=sessionStorage.getItem(O)}catch{return null}if(i===null)return null;let m;try{m=JSON.parse(i)}catch{m=null}const u=m?.y;if(!(typeof u=="number"&&Number.isFinite(u)&&u>=0)){try{sessionStorage.removeItem(O)}catch{}return null}return u};let S=!1;const h=i=>{try{const m=scrollY;scrollTo({top:i,left:0,behavior:"instant"}),s=i,n=!0,clearTimeout(e),a=null,l(i);const u=scrollY;u!==m&&(t=!0),u!==i&&!S&&(S=!0,addEventListener("load",()=>{try{if(scrollY===u){const k=y();h(k!==null?k:s)}}catch{}},{once:!0}))}catch{}},w=()=>{try{return!!location.hash}catch{return!0}};let o=!1;const f=()=>{try{if(o||innerWidth>ye||innerHeight>we)return;o=!0;const i=Date.now(),m=()=>{try{removeEventListener("resize",m)}catch{}if(Date.now()-i>be||r||w())return;const u=y();h(u!==null?u:s)};addEventListener("resize",m)}catch{}};let _=!1,b=!1;return{restore(){if(_||(_=!0,w()))return;const i=y();i!==null&&(h(i),f())},promoted(){if(b||(b=!0,w()))return;const i=y();i!==null?(h(i),f()):n&&h(s)}}}function ge(e,t,r,n){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:v=>v})??null}catch{}const a=window.Worker,l=a?.prototype,d=Object.freeze({Worker:a,workerOn:l?.addEventListener,workerPost:l?.postMessage,workerTerminate:l?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,policy:s,origins:t});r(e).then(v=>v?.bootTopLevel?v.bootTopLevel(d,n):n.settle()).catch(()=>n.settle())}var Oe="modulepreload",Ce=function(e){return"/"+e},je={},Ae=function(t,r,n){let s=Promise.resolve();function a(l){const d=new Event("vite:preloadError",{cancelable:!0});if(d.payload=l,window.dispatchEvent(d),!d.defaultPrevented)throw l}return s.then(l=>{for(const d of l||[])d.status==="rejected"&&a(d.reason);return t().catch(a)})},Re=window===top,q=Object.getOwnPropertyDescriptor(window,"claude"),T=me(Re,window.__FRAME_PREAMBLE?.topLevel,q?.writable===!1),C=typeof T=="object"&&T[0],p=C?_e():he();(function(){const e=Object.defineProperty,t=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let s=0;s<r.length;s++){const a=r[s];try{e(t,a,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[a]}catch{}try{e(t,a,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[a]=="function"&&n++}if(n&&T==="framed")try{p.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Se=1e4,W=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function $(e){for(const t of W)if(t.endsWith(":*"))try{const r=new URL(e);if(`${r.protocol}//${r.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var L=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),j=window.__FRAME_PREAMBLE?.transforms,N=window.__FRAME_PREAMBLE?.comments,I=window.__FRAME_PREAMBLE?.translate;function R(e){return Ae(()=>import("/_runtime/"+e),void 0)}function K(e,t){return{contract:e.contract,changes:new Set(e.changes??[]),flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:new Map,shellOrigin:t,mount:D,pipe:()=>({wrap:(r,n)=>(...s)=>{try{return n(...s)}catch(a){return Promise.reject(a)}}})}}var P=null,E=null;function Y(e,t,r){try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var B=!1;function ke(e,t){const r=[];for(const n of e.elements){const s=document.querySelector(`[data-id="${n.target}"]`);if(!s){p.post({__frame_patch_miss:{seq:e.seq}},t);return}if([...Object.keys(n.attrsSet??{}),...n.attrsRemoved??[]].some(a=>!te(a))){p.post({__frame_patch_miss:{seq:e.seq}},t);return}if(n.text!==void 0&&(!se(s)||ie(s))){p.post({__frame_patch_miss:{seq:e.seq}},t);return}for(const[a,l]of Object.entries(n.attrsSet??{}))if(!G(s,a)){try{s.setAttribute(a,l)}catch{}X(s,a,l)}for(const a of n.attrsRemoved??[])G(s,a)||(s.removeAttribute(a),X(s,a,null));typeof n.text=="string"&&(s.textContent=n.text),r.push(n.target)}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:r}}))}catch{}}function X(e,t,r){if(!(e instanceof HTMLInputElement))return;const n=t.toLowerCase();n==="checked"?e.checked=r!==null:n==="value"&&e.type!=="file"&&(e.value=r??"")}function G(e,t){const r=t.toLowerCase(),n=e;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${e.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function V(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,B=!0):B&&(delete t.dataset.theme,t.style.colorScheme="",B=!1)}var M=new Map;function Te(){let e;const t={u:new Promise(r=>{e=r}),r:r=>{t.done=!0,e(r)},done:!1,nulled:!1};return t}function U(){for(const e of M.values())e.done||(e.nulled=!0,e.r(null))}var Le=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),D=(e,t)=>{const r=M.get(e);if(!r||r.done){r?.nulled&&E&&p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:e}},E);return}const n=typeof t=="function"?Object.setPrototypeOf(t,Le):Object.assign(Object.create(null),t);typeof n.then=="function"&&delete n.then,r.r(Object.freeze(n))};function Z(){const e=q?.value??{};Y(window,"claude",e);for(const t of Object.keys(L)){if(e[t]!==void 0){Y(e,t,e[t]);continue}M.set(t,Te())}if(e.use===void 0){const t=r=>{if(typeof r!="string"||!Object.hasOwn(L,r))return Promise.resolve(null);const n=M.get(r);return n?n.u:Promise.resolve(e[r]??null)};try{Object.defineProperty(e,"use",{value:t,writable:!0,configurable:!0,enumerable:!1})}catch{}}}if(T==="framed"){const e=j&&A.test(j)?R(j).catch(()=>{}):Promise.resolve(void 0),t=o=>{if(o.type==="auxclick"&&o.button!==1)return;const f=o.target,_=f&&f.closest?f.closest("a[href],area[href]"):null;if(!_)return;const b=_.getAttribute("href");if(!b)return;let i;try{i=new URL(b,document.baseURI)}catch{return}if((i.protocol==="http:"||i.protocol==="https:")&&i.origin!==location.origin){o.preventDefault();const m=(_.getAttribute("target")??"").toLowerCase(),u=o.type==="auxclick"||o.metaKey||o.ctrlKey||o.shiftKey||o.altKey||!["","_self","_top","_parent"].includes(m);p.post({__frame_nav:!0,url:i.href,newTab:u},"*")}};addEventListener("click",t,!0),addEventListener("auxclick",t,!0);const r={},n=o=>{o.isTrusted&&(r.pointer=!0)},s=o=>{o.isTrusted&&(r.click=!0)};addEventListener("pointermove",n,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0}),e.then(o=>{o?.wireNav&&(o.wireNav(),removeEventListener("click",t,!0),removeEventListener("auxclick",t,!0),removeEventListener("pointermove",n,!0),removeEventListener("click",s,!0),o.wireEngagement?.(r))});let a=null;try{a=Ee()}catch{}Z();let l=null,d=null,v=0;const y=p.on((o,f)=>{$(f)&&fe(o)&&(l=o.__frame_init,E=f,y(),clearTimeout(v),d?.())});p.post({__frame_connect:!0},"*");const S=new Promise(o=>{d=o,v=setTimeout(()=>{y(),o()},Se)}),h=document.readyState==="loading"?new Promise(o=>document.addEventListener("DOMContentLoaded",()=>o(),{once:!0})):Promise.resolve();h.then(()=>{try{a?.restore()}catch{}});const w={cb:null};p.on((o,f)=>{if($(f)&&pe(o)){try{a?.promoted()}catch{}w.cb?.()}}),S.then(async()=>{if(!l||!E){U();return}V(l.theme);const o=E;let f=!1,_=!1;p.on((c,x)=>{if(x!==o)return;de(c)&&V(c.__frame_theme.theme),ue(c)&&ke(c.__frame_patch,o);const g=c?.__fc_mode;g&&typeof g=="object"&&!f&&N&&A.test(N)&&(f=!0,R(N).then(z=>z.install?.(o,g.on===!0)).catch(()=>{}));const F=c?.__ft_cmd;F&&typeof F=="object"&&!_&&I&&A.test(I)&&(_=!0,R(I).then(z=>z.install?.(o,F)).catch(()=>{}))});const b=Object.keys(l.capabilities??{}).filter(c=>Object.hasOwn(L,c)).map(c=>[c,L[c]]).filter(c=>typeof c[1]=="string"&&A.test(c[1])),i=await Promise.allSettled(b.map(([,c])=>R(c))),m=await e,u=E;if(m?.buildBoot||p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},u),m?.buildBoot)try{P=m.buildBoot(l,m.TRANSFORMS??{},{shellOrigin:u,mount:D},c=>p.post({__frame_cap_telemetry:c},u))}catch{p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},u),P=K(l,u)}else P=K(l,u);const k=c=>p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:c}},u),Pe=P;i.forEach((c,x)=>{const g=b[x][0];if(c.status!=="fulfilled"){k(g);return}try{c.value?.install?.(Pe)}catch{k(g)}}),U(),await h,p.post({__frame_ready:!0},E),e.then(c=>c?.installSizeReporter?.(u,w))})}else C&&(Z(),ge(C,W,R,{settle:U,mount:D}))})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Beamline and Bench</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --paper:      #f2f5f5;
+    --surface:    #ffffff;
+    --surface-2:  #fafbfb;
+    --ink:        #161c20;
+    --ink-2:      #4d5860;
+    --ink-3:      #7b878d;
+    --rule:       #dce3e3;
+    --rule-soft:  #e9eeee;
+    --dls:        #0e6f7e;
+    --dls-soft:   #dceff1;
+    --home:       #a05d1c;
+    --home-soft:  #f7e8d6;
+    --shadow:     0 1px 2px rgba(22,28,32,.05), 0 8px 24px -12px rgba(22,28,32,.16);
+
+    --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --f-body:    "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --f-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:     #0e1214;
+      --surface:   #161c1f;
+      --surface-2: #1b2226;
+      --ink:       #e9eeef;
+      --ink-2:     #a2afb4;
+      --ink-3:     #6d7b81;
+      --rule:      #262f33;
+      --rule-soft: #1f272a;
+      --dls:       #55c6d6;
+      --dls-soft:  #0f3239;
+      --home:      #e3a561;
+      --home-soft: #3a2916;
+      --shadow:    0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:     #0e1214;
+    --surface:   #161c1f;
+    --surface-2: #1b2226;
+    --ink:       #e9eeef;
+    --ink-2:     #a2afb4;
+    --ink-3:     #6d7b81;
+    --rule:      #262f33;
+    --rule-soft: #1f272a;
+    --dls:       #55c6d6;
+    --dls-soft:  #0f3239;
+    --home:      #e3a561;
+    --home-soft: #3a2916;
+    --shadow:    0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.1rem, 4vw, 2.5rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.4rem, 5vw, 3.6rem);
+  }
+
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: .72rem;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 .9rem;
+  }
+
+  h1 {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 7vw, 3.9rem);
+    line-height: 1.02;
+    letter-spacing: -.032em;
+    text-wrap: balance;
+    margin: 0 0 1rem;
+  }
+
+  h1 .amp { color: var(--ink-3); font-weight: 500; }
+
+  .standfirst {
+    max-width: 60ch;
+    font-size: 1.06rem;
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  /* section blocks */
+  .block { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .block > header { display: flex; flex-direction: column; gap: .45rem; }
+
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(1.35rem, 3.4vw, 1.75rem);
+    letter-spacing: -.022em;
+    line-height: 1.15;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .sub { margin: 0; color: var(--ink-2); max-width: 62ch; font-size: .96rem; }
+
+  /* stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .stat { background: var(--surface); padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: .25rem; }
+
+  .stat .n {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 1.85rem;
+    line-height: 1;
+    letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat .n.dls  { color: var(--dls); }
+  .stat .n.home { color: var(--home); }
+
+  .stat .l {
+    font-family: var(--f-mono);
+    font-size: .68rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  /* tables */
+  .tablecard {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .scroller { overflow-x: auto; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+
+  thead th {
+    font-family: var(--f-mono);
+    font-size: .66rem;
+    font-weight: 500;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-align: left;
+    padding: .85rem 1.1rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface-2);
+    white-space: nowrap;
+  }
+
+  thead th.num { text-align: right; }
+
+  .month th {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: .74rem;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    background: var(--surface-2);
+    padding: .6rem 1.1rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .month th .count {
+    font-family: var(--f-mono);
+    font-weight: 400;
+    letter-spacing: .06em;
+    color: var(--ink-3);
+    text-transform: none;
+    margin-left: .55rem;
+  }
+
+  tbody td { padding: .95rem 1.1rem; border-top: 1px solid var(--rule-soft); vertical-align: baseline; }
+
+  tbody tr:first-child td { border-top: none; }
+
+  .c-date {
+    font-family: var(--f-mono);
+    font-size: .82rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  .c-repo { min-width: 15rem; }
+
+  .owner { font-family: var(--f-mono); font-size: .8rem; color: var(--ink-3); display: block; }
+
+  .name {
+    font-family: var(--f-mono);
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -.01em;
+  }
+
+  .c-what { color: var(--ink-2); min-width: 17rem; }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .42rem;
+    font-family: var(--f-mono);
+    font-size: .66rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .28rem .55rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
+
+  .chip.dls  { color: var(--dls);  background: var(--dls-soft); }
+  .chip.home { color: var(--home); background: var(--home-soft); }
+
+  .lock {
+    font-family: var(--f-mono);
+    font-size: .62rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: .1rem .34rem;
+    margin-left: .5rem;
+    white-space: nowrap;
+  }
+
+  /* numeric / PR tables */
+  td.num {
+    font-family: var(--f-mono);
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .win { white-space: nowrap; }
+  .win .yr { font-weight: 600; }
+  .win .span { color: var(--ink-3); font-family: var(--f-mono); font-size: .78rem; display: block; }
+
+  tr.total td { background: var(--surface-2); border-top: 1px solid var(--rule); }
+
+  tr.total td.num, tr.total .win .yr {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 1.02rem;
+    letter-spacing: -.01em;
+  }
+
+  tr.total td.num { font-variant-numeric: tabular-nums; }
+
+  .mtable td, .mtable th { padding: .6rem .75rem; }
+  .mtable td.num, .mtable th.num { text-align: right; font-size: .85rem; }
+  .mtable .lbl {
+    font-family: var(--f-mono);
+    font-size: .74rem;
+    letter-spacing: .08em;
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .mtable .none { color: var(--ink-3); }
+  .mtable tr.y26 td.num { font-weight: 600; }
+
+  /* notes */
+  .notes { display: flex; flex-direction: column; gap: .8rem; font-size: .88rem; color: var(--ink-2); max-width: 68ch; }
+
+  .notes h3 {
+    font-family: var(--f-mono);
+    font-size: .68rem;
+    font-weight: 500;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0;
+  }
+
+  .notes p { margin: 0; }
+
+  .notes code, .sub code {
+    font-family: var(--f-mono);
+    font-size: .85em;
+    background: var(--surface-2);
+    border: 1px solid var(--rule-soft);
+    border-radius: 2px;
+    padding: .06em .34em;
+  }
+
+  a { color: var(--dls); }
+  a:focus-visible { outline: 2px solid var(--dls); outline-offset: 2px; }
+
+  @media (max-width: 620px) {
+    .c-what { display: none; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">New repositories · March – August 2026</p>
+    <h1>Beamline <span class="amp">and</span> Bench</h1>
+    <p class="standfirst">
+      Every one was created from scratch since March, forks aside — twenty-seven
+      new repositories. Fourteen are in regular service and carry a marker for
+      where; the rest are experiments, demos and one-offs, and their
+      <em>Where</em> is left blank.
+    </p>
+  </header>
+
+  <section class="stats" aria-label="Summary">
+    <div class="stat"><span class="n">27</span><span class="l">Built</span></div>
+    <div class="stat"><span class="n dls">8</span><span class="l">At Diamond</span></div>
+    <div class="stat"><span class="n home">6</span><span class="l">Home lab</span></div>
+    <div class="stat"><span class="n">13</span><span class="l">Not in service</span></div>
+  </section>
+
+  <div class="tablecard">
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Where</th>
+            <th scope="col">Repository</th>
+            <th scope="col">What it does</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="month"><th colspan="4" scope="colgroup">March <span class="count">2</span></th></tr>
+          <tr>
+            <td class="c-date">9 Mar</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">robot-arm-sim</span></td>
+            <td class="c-what">Robot arm simulation, initially for the Meca500-R3</td>
+          </tr>
+          <tr>
+            <td class="c-date">27 Mar</td><td><span class="chip dls">Diamond</span></td>
+            <td class="c-repo"><span class="owner">epics-containers/</span><span class="name">argocd-monitor</span></td>
+            <td class="c-what">ArgoCD deployment monitor</td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr class="month"><th colspan="4" scope="colgroup">April <span class="count">3</span></th></tr>
+          <tr>
+            <td class="c-date">1 Apr</td><td><span class="chip dls">Diamond</span></td>
+            <td class="c-repo"><span class="owner">epics-containers/</span><span class="name">ioc-python</span></td>
+            <td class="c-what">A generic IOC for simple python scripts</td>
+          </tr>
+          <tr>
+            <td class="c-date">13 Apr</td><td><span class="chip home">Home lab</span></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">peyote-pattern</span></td>
+            <td class="c-what">Pattern designer for peyote bead stitching</td>
+          </tr>
+          <tr>
+            <td class="c-date">30 Apr</td><td><span class="chip dls">Diamond</span></td>
+            <td class="c-repo"><span class="owner">epics-containers/</span><span class="name">glab-auto-release</span></td>
+            <td class="c-what">Automated releases for services repositories</td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr class="month"><th colspan="4" scope="colgroup">May <span class="count">9</span></th></tr>
+          <tr>
+            <td class="c-date">5 May</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">.claude</span><span class="lock">Private</span></td>
+            <td class="c-what">Global Claude Code settings</td>
+          </tr>
+          <tr>
+            <td class="c-date">6 May</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">fastcs-demo</span></td>
+            <td class="c-what">Testing the FastCS multiple-controller PR</td>
+          </tr>
+          <tr>
+            <td class="c-date">7 May</td><td><span class="chip dls">Diamond</span></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">appimage-pod</span></td>
+            <td class="c-what">Run AppImages in podman, even when they need a newer glibc than the host</td>
+          </tr>
+          <tr>
+            <td class="c-date">10 May</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">claude-sandbox</span></td>
+            <td class="c-what">Original of the sandbox; superseded by the Diamond copy</td>
+          </tr>
+          <tr>
+            <td class="c-date">10 May</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">claude-sandbox-python</span></td>
+            <td class="c-what">Python-flavoured variant of the sandbox</td>
+          </tr>
+          <tr>
+            <td class="c-date">25 May</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">hermes-agent</span><span class="lock">Private</span></td>
+            <td class="c-what">Agent files for the hermes instance</td>
+          </tr>
+          <tr>
+            <td class="c-date">25 May</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">hermes-planning</span></td>
+            <td class="c-what">Working out how to deploy a hermes agent to a VPS</td>
+          </tr>
+          <tr>
+            <td class="c-date">30 May</td><td><span class="chip home">Home lab</span></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">pkm-vault</span><span class="lock">Private</span></td>
+            <td class="c-what">The Obsidian vault Thoth manages</td>
+          </tr>
+          <tr>
+            <td class="c-date">30 May</td><td><span class="chip home">Home lab</span></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">thoth</span></td>
+            <td class="c-what">Agentic PKM wiki with semantic index, MCP and Slack connector</td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr class="month"><th colspan="4" scope="colgroup">June <span class="count">6</span></th></tr>
+          <tr>
+            <td class="c-date">5 Jun</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">pkm-vault-demo</span><span class="lock">Private</span></td>
+            <td class="c-what">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="c-date">15 Jun</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">pkm-vault-dg</span></td>
+            <td class="c-what">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="c-date">22 Jun</td><td><span class="chip dls">Diamond</span></td>
+            <td class="c-repo"><span class="owner">epics-containers/</span><span class="name">ioc-streamdevice</span></td>
+            <td class="c-what">Generic StreamDevice IOC</td>
+          </tr>
+          <tr>
+            <td class="c-date">24 Jun</td><td><span class="chip dls">Diamond</span></td>
+            <td class="c-repo"><span class="owner">epics-containers/</span><span class="name">ibek-runtime-support</span></td>
+            <td class="c-what">Runtime templates and entity models for generic IOCs</td>
+          </tr>
+          <tr>
+            <td class="c-date">29 Jun</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">ioc-adsimdetector</span></td>
+            <td class="c-what">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="c-date">29 Jun</td><td><span class="chip dls">Diamond</span></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">t01-services</span></td>
+            <td class="c-what">Tutorial simulation beamline on docker compose</td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr class="month"><th colspan="4" scope="colgroup">July <span class="count">3</span></th></tr>
+          <tr>
+            <td class="c-date">1 Jul</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">mystmd-pythonapi</span></td>
+            <td class="c-what">A mystmd plugin that renders API docs for python projects</td>
+          </tr>
+          <tr>
+            <td class="c-date">3 Jul</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">ioc-adsim-demo</span></td>
+            <td class="c-what">Tutorial version of the simdetector generic IOC</td>
+          </tr>
+          <tr>
+            <td class="c-date">23 Jul</td><td><span class="chip dls">Diamond</span></td>
+            <td class="c-repo"><span class="owner">DiamondLightSource/</span><span class="name">claude-sandbox</span></td>
+            <td class="c-what">Sandboxed Claude Code for any Debian-based devcontainer</td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr class="month"><th colspan="4" scope="colgroup">August <span class="count">4</span></th></tr>
+          <tr>
+            <td class="c-date">5 Aug</td><td><span class="chip home">Home lab</span></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">somnia</span></td>
+            <td class="c-what">Bedtime audiobook reader with semantic seek</td>
+          </tr>
+          <tr>
+            <td class="c-date">15 Aug</td><td><span class="chip home">Home lab</span></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">podbench</span></td>
+            <td class="c-what">Kubernetes pod debugger container</td>
+          </tr>
+          <tr>
+            <td class="c-date">25 Aug</td><td><span class="chip home">Home lab</span></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">lllm3090</span></td>
+            <td class="c-what">Local LLM serving for a single RTX 3090, with browser control panel</td>
+          </tr>
+          <tr>
+            <td class="c-date">28 Aug</td><td></td>
+            <td class="c-repo"><span class="owner">gilesknap/</span><span class="name">claude-chat</span><span class="lock">Private</span></td>
+            <td class="c-what">Notes from a short chat about Claude usage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============ PR volume ============ -->
+  <section class="block">
+    <header>
+      <p class="eyebrow">Pull request volume</p>
+      <h2>Three times the throughput, eight months in</h2>
+      <p class="sub">
+        Pull requests opened by <code>gilesknap</code> across every repository GitHub search can
+        see. 2026 is only part-year, so the middle row matches it against the same
+        1 January – 28 August window in 2025.
+      </p>
+    </header>
+
+    <div class="tablecard">
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Window</th>
+              <th scope="col" class="num">Opened</th>
+              <th scope="col" class="num">Merged</th>
+              <th scope="col" class="num">Merge rate</th>
+              <th scope="col" class="num">Per month</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="win"><span class="yr">2025</span><span class="span">full year</span></td>
+              <td class="num">443</td><td class="num">406</td><td class="num">92%</td><td class="num">37</td>
+            </tr>
+            <tr>
+              <td class="win"><span class="yr">2025</span><span class="span">1 Jan – 28 Aug</span></td>
+              <td class="num">299</td><td class="num">274</td><td class="num">92%</td><td class="num">38</td>
+            </tr>
+            <tr>
+              <td class="win"><span class="yr">2026</span><span class="span">1 Jan – 28 Aug</span></td>
+              <td class="num">898</td><td class="num">833</td><td class="num">93%</td><td class="num">114</td>
+            </tr>
+            <tr class="total">
+              <td class="win"><span class="yr">Like for like</span><span class="span">2026 vs 2025, same window</span></td>
+              <td class="num">&times;3.0</td><td class="num">&times;3.0</td><td class="num">+1pt</td><td class="num">&times;3.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tablecard">
+      <div class="scroller">
+        <table class="mtable">
+          <thead>
+            <tr>
+              <th scope="col">PRs opened</th>
+              <th scope="col" class="num">Jan</th><th scope="col" class="num">Feb</th>
+              <th scope="col" class="num">Mar</th><th scope="col" class="num">Apr</th>
+              <th scope="col" class="num">May</th><th scope="col" class="num">Jun</th>
+              <th scope="col" class="num">Jul</th><th scope="col" class="num">Aug</th>
+              <th scope="col" class="num">Sep</th><th scope="col" class="num">Oct</th>
+              <th scope="col" class="num">Nov</th><th scope="col" class="num">Dec</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lbl">2025</td>
+              <td class="num">21</td><td class="num">46</td><td class="num">85</td><td class="num">25</td>
+              <td class="num">23</td><td class="num">24</td><td class="num">57</td><td class="num">19</td>
+              <td class="num">30</td><td class="num">43</td><td class="num">20</td><td class="num">50</td>
+            </tr>
+            <tr class="y26">
+              <td class="lbl">2026</td>
+              <td class="num">32</td><td class="num">58</td><td class="num">116</td><td class="num">141</td>
+              <td class="num">99</td><td class="num">157</td><td class="num">34</td><td class="num">261</td>
+              <td class="num none">&mdash;</td><td class="num none">&mdash;</td>
+              <td class="num none">&mdash;</td><td class="num none">&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="notes">
+      <p>
+        2026 passed the whole of 2025 by early June and is now at twice its full-year total
+        with four months still to run. The step up lands in March, and August alone —
+        261 — beats any complete quarter of 2025.
+      </p>
+      <p>
+        July is the one dip, at 34. It is also the month <code>claude-sandbox</code> moved to
+        Diamond, so it may reflect time spent on tooling rather than a drop in output.
+      </p>
+    </div>
+  </section>
+
+  <section class="notes">
+    <h3>Notes</h3>
+    <p>
+      A blank <em>Where</em> means the repository isn't in regular use — thirteen of the
+      twenty-seven. May is the busiest month at nine new repositories, but only three of
+      those nine stuck.
+    </p>
+    <p>
+      <code>claude-sandbox</code> appears twice, deliberately.
+      <code>DiamondLightSource/claude-sandbox</code> is the master copy even though GitHub still
+      marks it a fork, so it is kept and carries the marker; the May original is listed
+      unmarked as the superseded origin.
+    </p>
+    <p>
+      Three real forks are excluded: <code>ibek-runtime-support</code>,
+      <code>ibek-support</code> and <code>python-copier-template</code>.
+      <code>argocd-monitor</code>, <code>ioc-adsimdetector</code>, <code>pkm-vault-demo</code>
+      and <code>pkm-vault-dg</code> carry no repository description; the first is inferred from
+      its name and early commits, the rest are left blank.
+    </p>
+    <p>
+      Repositories under <code>epics-containers</code> and <code>DiamondLightSource</code> are
+      attributed by first-commit author, since GitHub records no creator; only public ones are
+      visible. PR counts come from GitHub search and cover public repositories plus private
+      ones the token can reach. Counts are pull requests opened, which measures volume, not
+      size or difficulty — and the data shows the rise, not its cause.
+    </p>
+  </section>
+
+</div>
+
+</body></html>
