@@ -43,7 +43,7 @@ My favourite skill set is builder2ibek. This is a python tool originally hand wr
 When I'm running claude is this project it knows lots of details about our old and new controls infrastructure. So I can ask it questions like this: [asub conversion](https://claude.ai/code/artifact/a844d62a-f95f-4920-9a33-1b280ab80a78?org=730ada2f-09f9-446c-be32-eeb31fe85cd7)
 
 (VSCODE - show skills b2i folder)
-So again, I didn't write any of these skills. I merely had a conversation e.g. 'take a look in this folder and then find all the subfolders with the highest version number'. Then once we had found what we wanted, I asked claude to write a skill that would do the same thing automatically in future. Repeating this process has built up into an incredibly useful skill set that can do half of the work I used to do manually.
+So again, I didn't write any of these skills. I merely had a conversation e.g. 'take a look in the production folder and find all of the latest support modules versions'. Then once we had found what we wanted, I asked claude to write a skill that would do the same thing automatically in future. Repeating this process has built up into an incredibly useful skill set that can do half of the work I used to do manually.
 
 One thing to be clear on is that claude automatically saves memories of what you have been up to on a per project basis. However that always goes into the $HOME/.claude folder. Also it only saves memories on its own cadence. For this reason I developed the /memo command. This makes sure your memories are up to date and then extracts relevant memories into skills in the project folder.
 
