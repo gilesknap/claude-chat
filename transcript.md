@@ -20,7 +20,7 @@ This restricts its access to credentials, filesystems and local network devices.
 
 The project comes with some 'slash' commands and I'm just going to run /verify-sandbox. This tells Claude to try and break out of the sandbox using 10 novel methods it can think of.
 
-When you run claude code directly on your host machine, it has full access to your credentials and filesystem. And can basically do anything you can do. If you make a mistake in your prompt or a bad actor gets control via prompt injection, it could be disastrous.
+The reason we need this is that when you run claude code directly on your host machine, it has full access to your credentials, filesystem and network. It can basically do anything you can do. If you make a mistake in your prompt or a bad actor gets control via prompt injection, it could be disastrous.
 
 Because I have claude sandbox I can happily leave claude to do long running tasks without worrying about the blast radius if things go wrong.
 
