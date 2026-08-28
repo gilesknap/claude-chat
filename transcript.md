@@ -40,12 +40,15 @@ Claude has 3 places it saves information:
 
 My favourite skill set is builder2ibek. This is a python tool originally hand written that converts DLS old XML based IOCs into our new containerised IOCs.
 
-When I'm running claude is this project it knows lots of details about our old and new controls infrastructure. So I can ask it questions like this: [asub conversion](https://claude.ai/code/artifact/9b2a8f9c-4485-47ad-abd0-2b90d0197b90)
+When I'm running claude is this project it knows lots of details about our old and new controls infrastructure. So I can ask it questions like this: [asub conversion](https://claude.ai/code/artifact/a844d62a-f95f-4920-9a33-1b280ab80a78?org=730ada2f-09f9-446c-be32-eeb31fe85cd7)
 
 (VSCODE - show skills b2i folder)
 So again, I didn't write any of these skills. I merely had a conversation e.g. 'take a look in this folder and then find all the subfolders with the highest version number'. Then once we had found what we wanted, I asked claude to write a skill that would do the same thing automatically in future. Repeating this process has built up into an incredibly useful skill set that can do half of the work I used to do manually.
 
-/memo
+One thing to be clear on is that claude automatically saves memories of what you have been up to on a per project basis. However that always goes into the $HOME/.claude folder. Also it only saves memories on its own cadence. For this reason I developed the /memo command. This makes sure your memories are up to date and then extracts relevant memories into skills in the project folder.
+
+That means useful learnings can be carried along with the project source and used by other developers.
+
 
 # 4, 5
 podbench is my counter example. I've been spending a lot of time on it recently and its all gone a bit wrong.
@@ -60,7 +63,7 @@ So the lesson is make sure you tell the agent you are prototyping. Get a minimal
 
 # Wrapping up
 
-- Sandbox it, so you can leave it running.
-- Promote what you learn into skills, so you only learn it once.
+- Sandbox it, so you can leave it running autonomously.
+- Promote what you learn into skills, so you only learn it once. Use /memo to help.
 - Make sure the agent knows you are prototyping if that's what you are doing!
 - Obvious but worth saying: lines of code and PR count are not measures of success.
